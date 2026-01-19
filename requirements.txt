@@ -1,0 +1,43 @@
+# Pallet Box Counter - Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Core ML
+ultralytics>=8.0.0          # YOLOv8
+torch>=2.0.0                # PyTorch
+torchvision>=0.15.0         # Vision models for regression
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+albumentations>=1.3.0       # Image augmentations
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0              # Interactive plots
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+tqdm>=4.65.0                # Progress bars
+
+# API & Deployment
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+python-multipart>=0.0.6     # File uploads
+pydantic>=2.0.0
+
+# Experiment Tracking (optional but recommended)
+# mlflow>=2.5.0
+# wandb>=0.15.0
+
+# Testing
+pytest>=7.4.0
+httpx>=0.24.0               # Async HTTP for testing
+
+# Utilities
+python-dotenv>=1.0.0
+PyYAML>=6.0
+

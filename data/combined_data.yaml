@@ -1,0 +1,44 @@
+# Combined Dataset Configuration for Pallet Box Detection
+# This configuration merges two Roboflow datasets for improved model robustness
+#
+# Dataset 1: Boxes.v1i.yolov8 (5,006 images)
+# Dataset 2: Final_Object_Detection.v1i.yolov8 (1,869 images)
+# Total: 6,875 images with ~84,759 box annotations
+#
+# Usage: python src/train_yolo.py --data data/combined_data.yaml
+
+# Paths - using absolute paths for reliability
+path: /Users/qadeermac/workspace/ML-Pallet-Box-Counter
+
+train:
+  - Boxes.v1i.yolov8/train/images
+  - Final_Object_Detection.v1i.yolov8/train/images
+
+val:
+  - Boxes.v1i.yolov8/valid/images
+  - Final_Object_Detection.v1i.yolov8/valid/images
+
+test:
+  - Boxes.v1i.yolov8/test/images
+  - Final_Object_Detection.v1i.yolov8/test/images
+
+# Class configuration
+nc: 1  # Number of classes
+names:
+  0: box  # Unified class name for cardboard boxes/cartons
+
+# Dataset statistics (70/20/10 split)
+# Train: 4,812 images (3,504 + 1,308) = 70%
+# Valid: 1,374 images (1,001 + 373) = 20%
+# Test:  689 images (501 + 188) = 10%
+# Total: 6,875 images
+# Avg boxes per image: ~12-14
+
+# Source information
+sources:
+  - name: Boxes.v1i.yolov8
+    url: https://universe.roboflow.com/box-fh0kz/boxes-ou3c2/dataset/1
+    license: CC BY 4.0
+  - name: Final_Object_Detection
+    url: https://universe.roboflow.com/vishnua/final_object_detection-pjovt/dataset/1
+    license: CC BY 4.0

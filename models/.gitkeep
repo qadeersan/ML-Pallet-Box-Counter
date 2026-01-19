@@ -1,0 +1,6 @@
+# This directory stores trained model weights
+# Files in this directory:
+# - yolov8n_boxes.pt (YOLOv8 nano model)
+# - yolov8s_boxes.pt (YOLOv8 small model)
+# - resnet18_regression.pt (CNN regression baseline)
+

@@ -1,0 +1,65 @@
+# CNN Regression Model Configuration
+# Usage: python src/train_regression.py --config configs/regression_config.yaml
+
+# Model Architecture
+model:
+  backbone: resnet18  # Options: resnet18, resnet34, efficientnet_b0
+  pretrained: true
+  dropout: 0.3
+  output_activation: relu  # Ensure non-negative count predictions
+
+# Dataset
+data:
+  train_dirs:
+    - Boxes.v1i.yolov8/train
+    - Final_Object_Detection.v1i.yolov8/train
+  val_dirs:
+    - Boxes.v1i.yolov8/valid
+    - Final_Object_Detection.v1i.yolov8/valid
+  test_dirs:
+    - Boxes.v1i.yolov8/test
+    - Final_Object_Detection.v1i.yolov8/test
+  imgsz: 224  # Input image size
+
+# Training Parameters
+training:
+  epochs: 30
+  batch_size: 32
+  num_workers: 4
+  device: cuda  # 'cuda' or 'cpu'
+
+# Optimizer
+optimizer:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+# Learning Rate Scheduler
+scheduler:
+  name: cosine  # Options: cosine, step, plateau
+  T_max: 30     # For cosine scheduler
+  min_lr: 0.00001
+
+# Loss Function
+loss:
+  name: mae  # Mean Absolute Error (L1)
+  # Alternative: mse (Mean Squared Error / L2)
+
+# Augmentation (using albumentations)
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.0
+  brightness_limit: 0.2
+  contrast_limit: 0.2
+  rotate_limit: 5
+  normalize:
+    mean: [0.485, 0.456, 0.406]  # ImageNet mean
+    std: [0.229, 0.224, 0.225]   # ImageNet std
+
+# Output
+output:
+  save_dir: models/
+  model_name: resnet18_box_counter
+  save_best: true
+  metric: val_mae  # Metric to monitor for best model
+

@@ -1,0 +1,15 @@
+{
+  "total_images": 6875,
+  "total_boxes": 79949,
+  "avg_boxes_per_image": 11.63,
+  "box_count_min": 1,
+  "box_count_max": 98,
+  "box_count_median": 6,
+  "train_images": 4812,
+  "valid_images": 1374,
+  "test_images": 689,
+  "avg_box_width": 0.2495,
+  "avg_box_height": 0.2781,
+  "avg_box_area": 0.1035,
+  "avg_aspect_ratio": 1.186
+}

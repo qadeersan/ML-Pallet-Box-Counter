@@ -1,0 +1,24 @@
+# Boxes Dataset Configuration
+# Source: https://universe.roboflow.com/box-fh0kz/boxes-ou3c2/dataset/1
+# License: CC BY 4.0
+#
+# Dataset Statistics (70/20/10 split):
+# - Train: 3,504 images (70%)
+# - Valid: 1,001 images (20%)
+# - Test: 501 images (10%)
+# - Total: 5,006 images
+
+train: ../Boxes.v1i.yolov8/train/images
+val: ../Boxes.v1i.yolov8/valid/images
+test: ../Boxes.v1i.yolov8/test/images
+
+nc: 1
+names:
+  0: box
+
+roboflow:
+  workspace: box-fh0kz
+  project: boxes-ou3c2
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/box-fh0kz/boxes-ou3c2/dataset/1

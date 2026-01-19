@@ -1,0 +1,24 @@
+# Final Object Detection Dataset Configuration
+# Source: https://universe.roboflow.com/vishnua/final_object_detection-pjovt/dataset/1
+# License: CC BY 4.0
+#
+# Dataset Statistics (70/20/10 split):
+# - Train: 1,308 images (70%)
+# - Valid: 373 images (20%)
+# - Test: 188 images (10%)
+# - Total: 1,869 images
+
+train: ../Final_Object_Detection.v1i.yolov8/train/images
+val: ../Final_Object_Detection.v1i.yolov8/valid/images
+test: ../Final_Object_Detection.v1i.yolov8/test/images
+
+nc: 1
+names:
+  0: box
+
+roboflow:
+  workspace: vishnua
+  project: final_object_detection-pjovt
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/vishnua/final_object_detection-pjovt/dataset/1
