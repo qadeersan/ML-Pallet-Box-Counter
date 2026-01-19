@@ -9,6 +9,8 @@
 
 An end-to-end machine learning system that automatically counts boxes on pallets from images using computer vision. Built with YOLOv8 object detection and deployed as a REST API on Google Cloud Run.
 
+### API Demo Link: https://www.loom.com/share/62119bf646bd4d45be4374f3a26436c0
+
 ---
 
 ## 🎯 Problem Statement
@@ -127,16 +129,7 @@ ML-Pallet-Box-Counter/
 │   ├── yolo_config.yaml             # YOLOv8 hyperparameters
 │   └── regression_config.yaml       # CNN regression config
 │
-├── 📂 deploy/                       # Deployment scripts
-│   ├── deploy_safe.sh               # Cost-safe GCP deployment
-│   ├── deploy_gcp.sh                # Standard GCP deployment
-│   └── test_deployment.sh           # Deployment testing
-│
-├── 📂 docker/                       # Containerization
-│   └── Dockerfile                   # Docker image definition
-│
 ├── 📂 docs/                         # Documentation & visualizations
-│   ├── GCP_DEPLOYMENT_GUIDE.md      # Detailed GCP deployment guide
 │   ├── regression_summary.json      # Regression model results
 │   ├── eda_statistics.json          # EDA summary statistics
 │   └── *.png                        # Visualization outputs
@@ -144,6 +137,7 @@ ML-Pallet-Box-Counter/
 ├── 📂 runs/                         # Training outputs (auto-generated)
 │   └── detect/                      # YOLOv8 training runs
 │
+├── 📄 Dockerfile
 ├── 📄 requirements.txt              # Python dependencies
 ├── 📄 Pipfile                       # Pipenv dependencies
 ├── 📄 colab_training.py             # Google Colab training script
